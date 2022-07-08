@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* body {
+  margin: 0;
+} */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 12px;
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+}
+.head {
+  position: absolute;
+  top: 0rem;
+  padding: 3rem 1rem;
+  align-items: center;
+  display: flex;
+  gap: 10rem;
+  width: 100%;
+}
+
+.mobile-navigation {
+  z-index: 10000000000000;
+  background-image: url(./images/icon-hamburger.svg);
+}
+.btn-img {
+  border: 0;
+  width: 22px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+}
+.mobile-navigation[aria-expanded="true"] {
+  background-image: url(./images/icon-close.svg);
+}
+.logo {
+    z-index: 10;
+}
+.primary-navigation {
+  position: fixed;
+  top: 0rem;
+  height: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000000;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.primary-navigation[data-visible="true"] {
+  display: block;
+}
+ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3rem;
+  background-color: #fff;
+  padding: 3rem 1rem;
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+}
+
+picture,
+img {
+  max-width: 100%;
+  display: block;
+}
+img.he {
+  width: 100%;
+}
+.slide {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  position: absolute;
+  top: -3rem;
+  right: 0;
+background-color: black;
+}
+
+header {
+  width: 100%;
+  position: relative;
+}
+.shop-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.headone-text {
+  padding: 2rem 1.7rem;
+  position: relative;
+}
+.line {
+  display: block;
+}
+.text {
+  color: hsl(0, 0%, 27%);
+  line-height: 21px;
+  font-size: 15.7px;
+  margin: 1rem 0;
+}
+.shop-container {
+  margin-top: 2rem;
+}
+.shop {
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+.about-container {
+  padding: 2rem 1.7rem;
+  text-align: left;
+}
+.background-img {
+  min-height: 20rem;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slideleft {
+  background-image: url(./images/icon-angle-left.svg);
+}
+.slideimg {
+  background-color: black;
+  padding: 1.5rem;
+  background-size: auto;
+}
+.slideright {
+  background-image: url(./images/icon-angle-right.svg);
+}
+div.dark {
+  background-image: url(./images/image-about-dark.jpg);
+}
+div.light {
+  background-image: url(./images/image-about-light.jpg);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background-color:gainsboro;
+  padding:1.5rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media (min-width: 70rem) {
+  .mobile-navigation {
+    display: none;
+  }
+  .head {
+    padding: 4.5rem;
+    gap: 3rem;
+  }
+  .primary-navigation {
+    display: block;
+    background-color: transparent;
+    position: relative;
+  }
+  ul {
+    background-color: transparent;
+    padding: 0;
+    color: #ffff;
+    cursor: pointer;
+  }
+  li {
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  li:hover::before {
+    content: "";
+    width: 15px;
+    font-weight: 500;
+    background-color: #fff;
+    height: 1px;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    right: 0;
+    left: 0;
+  }
+
+  .slideleft:hover,.slideright:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 27%);
+  }
+  
+  .background-img{
+    min-height: auto;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  header {
+    grid-column: 1/7;
+    
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  picture {
+    grid-column: 1/3;
+  }
+  .headone-text {
+    display: flex;
+    padding: 0 4rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slide {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: auto;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .dark {
+    min-width: 449px;
+  }
+  .about-container {
+    text-align: start;
+    grid-column: 2/10;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .light {
+    min-width: 355px;
+  }
+}
